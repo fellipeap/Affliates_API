@@ -12,35 +12,32 @@ import java.util.Optional;
 
 @Service
 public class AffiliatesProductsService {
-    final AffiliatesProductsRepository afiliadosProdutoRepository;
+    final AffiliatesProductsRepository affiliatesProductRepository;
 
-    public AffiliatesProductsService(AffiliatesProductsRepository afiliadosProdutoRepository) {
-        this.afiliadosProdutoRepository = afiliadosProdutoRepository;
+    public AffiliatesProductsService(AffiliatesProductsRepository affiliatesProductRepository) {
+        this.affiliatesProductRepository = affiliatesProductRepository;
     }
 
     @Transactional
-    public AffiliatesProductsModel save(AffiliatesProductsModel afiliadosProdutoModel) {
-        return afiliadosProdutoRepository.save(afiliadosProdutoModel);
+    public AffiliatesProductsModel save(AffiliatesProductsModel affiliatesProductModel) {
+        return affiliatesProductRepository.save(affiliatesProductModel);
     }
 
     public Page<AffiliatesProductsModel> findAll(Pageable pageable) {
-        return afiliadosProdutoRepository.findAll(pageable);
+        return affiliatesProductRepository.findAll(pageable);
     }
-/*
-    public List<AffiliatesProductsModel> findAllCourse(String tipo) {
-        return afiliadosProdutoRepository.findAllCourse(tipo);
-    }*/
 
     public Optional<AffiliatesProductsModel> findById(Integer id) {
-        return afiliadosProdutoRepository.findById(id);
+        return affiliatesProductRepository.findById(id);
+    }
+
+    public List<AffiliatesProductsModel> findAllIdMasterProducts(Integer idMasterProducts){
+        return affiliatesProductRepository.findAllIdMasterProducts(idMasterProducts);
     }
 
     @Transactional
-    public void delete(AffiliatesProductsModel afiliadosProdutoModel) {
-        afiliadosProdutoRepository.delete(afiliadosProdutoModel);
+    public void delete(AffiliatesProductsModel affiliatesProductModel) {
+        affiliatesProductRepository.delete(affiliatesProductModel);
     }
 
-    public List<AffiliatesProductsModel> buscaPorCategoria(String categoria) {
-       return afiliadosProdutoRepository.findByCategoria(categoria);
-    }
 }

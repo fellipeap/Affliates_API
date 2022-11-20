@@ -12,7 +12,7 @@
 	<artifactId>afiliados</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>afiliados</name>
-	<description>Affiliates API</description>
+	<description>Affiliates API  </description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
